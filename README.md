@@ -1,2 +1,2 @@
-# puzzle_trails
-Repositorio de jogos puzzles para o jogo Trilhas do Conhecimento.
+# Jogos Puzzle da Trilha do Conhecimento
+Feito com [Godot Engine 3.5 LTS](https://godotengine.org/download/3.x).
