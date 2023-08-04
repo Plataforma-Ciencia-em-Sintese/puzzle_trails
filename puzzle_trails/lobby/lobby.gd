@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _on_Door_player_entered() -> void:
-	puzzle_handler.init_puzzle("res://puzzle/connection/connection.tscn")
+	puzzle_handler.init_puzzle("res://puzzle_handler/puzzles/connection/connection.tscn")
 
 
 func _on_PuzzleHandler_puzzle_finished(result: bool) -> void:

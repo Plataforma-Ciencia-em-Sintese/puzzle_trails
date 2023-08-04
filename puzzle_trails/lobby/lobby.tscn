@@ -4,7 +4,7 @@
 [ext_resource path="res://lobby/lobby.gd" type="Script" id=2]
 [ext_resource path="res://door/door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://fonts/Montserrat-Medium.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://puzzle/puzzle_handler.tscn" type="PackedScene" id=5]
+[ext_resource path="res://puzzle_handler/puzzle_handler.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=6]
 size = 22
