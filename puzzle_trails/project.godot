@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Squash the Creeps (3D)"
+config/name="Puzzles"
 config/description="In this game, your goal is to chase and kick out the creeps!
 
 This is a finished version of the game featured in the 'Your first 3D game'
@@ -26,6 +26,13 @@ MusicPlayer="*res://music_player/music_player.tscn"
 
 window/size/width=1280
 window/size/height=720
+window/size/test_width=1280
+window/size/test_height=720
+window/stretch/aspect="keep_width"
+
+[gui]
+
+theme/custom="res://puzzle_handler/assets/theme/theme.tres"
 
 [input]
 
