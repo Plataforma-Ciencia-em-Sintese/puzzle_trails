@@ -1,29 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://puzzle_handler/puzzles/connection/connection.gd" type="Script" id=1]
 [ext_resource path="res://puzzle_handler/assets/component/blunt_background/blunt_background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://puzzle_handler/assets/theme/theme.tres" type="Theme" id=3]
+[ext_resource path="res://puzzle_handler/puzzles/connection/energy_cell/energy_cell.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.47451, 0.47451, 0.47451, 1 )
-
-[sub_resource type="StyleBoxFlat" id=1]
-content_margin_left = 10.0
-content_margin_right = 10.0
-content_margin_top = 10.0
-content_margin_bottom = 10.0
-bg_color = Color( 0.219608, 0.211765, 0.227451, 1 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 0.772549, 0.772549, 0.772549, 1 )
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
 
 [node name="Connection" type="Control"]
 anchor_right = 1.0
@@ -76,17 +59,17 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GameContainer"]
+[node name="EnergyContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GameContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/GameContainer/EnergyContainer"]
 margin_right = 1160.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 0, 40 )
 step = 10.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer"]
+[node name="Cells" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GameContainer/EnergyContainer"]
 margin_top = 44.0
 margin_right = 1160.0
 margin_bottom = 628.0
@@ -94,288 +77,22 @@ size_flags_vertical = 3
 custom_constants/separation = 10
 alignment = 1
 
-[node name="Conection1" type="Control" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer"]
-margin_right = 1160.0
-margin_bottom = 108.0
-size_flags_vertical = 3
+[node name="EnergyCell1" parent="MarginContainer/VBoxContainer/GameContainer/EnergyContainer/Cells" instance=ExtResource( 4 )]
 
-[node name="Input" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection1"]
-anchor_bottom = 1.0
-margin_right = 384.0
-custom_constants/separation = 10
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection1/Input"]
-margin_right = 320.0
-margin_bottom = 113.0
-rect_min_size = Vector2( 320, 0 )
-custom_styles/normal = SubResource( 1 )
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-valign = 1
-autowrap = true
-
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection1/Input"]
-margin_left = 330.0
-margin_top = 26.0
-margin_right = 390.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 60, 60 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_styles/panel = SubResource( 2 )
-
-[node name="Output" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection1"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -320.0
-grow_horizontal = 0
-custom_constants/separation = 10
-
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection1/Output"]
-margin_top = 26.0
-margin_right = 60.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 60, 60 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_styles/panel = SubResource( 2 )
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection1/Output"]
-margin_left = 70.0
-margin_right = 390.0
-margin_bottom = 113.0
-rect_min_size = Vector2( 320, 0 )
-custom_styles/normal = SubResource( 1 )
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-valign = 1
-autowrap = true
-
-[node name="Conection2" type="Control" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer"]
+[node name="EnergyCell2" parent="MarginContainer/VBoxContainer/GameContainer/EnergyContainer/Cells" instance=ExtResource( 4 )]
 margin_top = 118.0
-margin_right = 1160.0
 margin_bottom = 227.0
-size_flags_vertical = 3
 
-[node name="Input" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection2"]
-anchor_bottom = 1.0
-margin_right = 384.0
-custom_constants/separation = 10
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection2/Input"]
-margin_right = 320.0
-margin_bottom = 113.0
-rect_min_size = Vector2( 320, 0 )
-custom_styles/normal = SubResource( 1 )
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-valign = 1
-autowrap = true
-
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection2/Input"]
-margin_left = 330.0
-margin_top = 26.0
-margin_right = 390.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 60, 60 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_styles/panel = SubResource( 2 )
-
-[node name="Output" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection2"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -320.0
-grow_horizontal = 0
-custom_constants/separation = 10
-
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection2/Output"]
-margin_top = 26.0
-margin_right = 60.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 60, 60 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_styles/panel = SubResource( 2 )
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection2/Output"]
-margin_left = 70.0
-margin_right = 390.0
-margin_bottom = 113.0
-rect_min_size = Vector2( 320, 0 )
-custom_styles/normal = SubResource( 1 )
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-valign = 1
-autowrap = true
-
-[node name="Conection3" type="Control" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer"]
+[node name="EnergyCell3" parent="MarginContainer/VBoxContainer/GameContainer/EnergyContainer/Cells" instance=ExtResource( 4 )]
 margin_top = 237.0
-margin_right = 1160.0
 margin_bottom = 346.0
-size_flags_vertical = 3
 
-[node name="Input" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection3"]
-anchor_bottom = 1.0
-margin_right = 384.0
-custom_constants/separation = 10
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection3/Input"]
-margin_right = 320.0
-margin_bottom = 113.0
-rect_min_size = Vector2( 320, 0 )
-custom_styles/normal = SubResource( 1 )
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-valign = 1
-autowrap = true
-
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection3/Input"]
-margin_left = 330.0
-margin_top = 26.0
-margin_right = 390.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 60, 60 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_styles/panel = SubResource( 2 )
-
-[node name="Output" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection3"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -320.0
-grow_horizontal = 0
-custom_constants/separation = 10
-
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection3/Output"]
-margin_top = 26.0
-margin_right = 60.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 60, 60 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_styles/panel = SubResource( 2 )
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection3/Output"]
-margin_left = 70.0
-margin_right = 390.0
-margin_bottom = 113.0
-rect_min_size = Vector2( 320, 0 )
-custom_styles/normal = SubResource( 1 )
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-valign = 1
-autowrap = true
-
-[node name="Conection4" type="Control" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer"]
+[node name="EnergyCell4" parent="MarginContainer/VBoxContainer/GameContainer/EnergyContainer/Cells" instance=ExtResource( 4 )]
 margin_top = 356.0
-margin_right = 1160.0
 margin_bottom = 465.0
-size_flags_vertical = 3
 
-[node name="Input" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection4"]
-anchor_bottom = 1.0
-margin_right = 384.0
-custom_constants/separation = 10
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection4/Input"]
-margin_right = 320.0
-margin_bottom = 113.0
-rect_min_size = Vector2( 320, 0 )
-custom_styles/normal = SubResource( 1 )
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-valign = 1
-autowrap = true
-
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection4/Input"]
-margin_left = 330.0
-margin_top = 26.0
-margin_right = 390.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 60, 60 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_styles/panel = SubResource( 2 )
-
-[node name="Output" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection4"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -320.0
-grow_horizontal = 0
-custom_constants/separation = 10
-
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection4/Output"]
-margin_top = 26.0
-margin_right = 60.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 60, 60 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_styles/panel = SubResource( 2 )
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection4/Output"]
-margin_left = 70.0
-margin_right = 390.0
-margin_bottom = 113.0
-rect_min_size = Vector2( 320, 0 )
-custom_styles/normal = SubResource( 1 )
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-valign = 1
-autowrap = true
-
-[node name="Conection5" type="Control" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer"]
+[node name="EnergyCell5" parent="MarginContainer/VBoxContainer/GameContainer/EnergyContainer/Cells" instance=ExtResource( 4 )]
 margin_top = 475.0
-margin_right = 1160.0
 margin_bottom = 584.0
-size_flags_vertical = 3
-
-[node name="Input" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection5"]
-anchor_bottom = 1.0
-margin_right = 384.0
-custom_constants/separation = 10
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection5/Input"]
-margin_right = 320.0
-margin_bottom = 113.0
-rect_min_size = Vector2( 320, 0 )
-custom_styles/normal = SubResource( 1 )
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-valign = 1
-autowrap = true
-
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection5/Input"]
-margin_left = 330.0
-margin_top = 26.0
-margin_right = 390.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 60, 60 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_styles/panel = SubResource( 2 )
-
-[node name="Output" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection5"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -320.0
-grow_horizontal = 0
-custom_constants/separation = 10
-
-[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection5/Output"]
-margin_top = 26.0
-margin_right = 60.0
-margin_bottom = 86.0
-rect_min_size = Vector2( 60, 60 )
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_styles/panel = SubResource( 2 )
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GameContainer/VBoxContainer/VBoxContainer/Conection5/Output"]
-margin_left = 70.0
-margin_right = 390.0
-margin_bottom = 113.0
-rect_min_size = Vector2( 320, 0 )
-custom_styles/normal = SubResource( 1 )
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-valign = 1
-autowrap = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BarContainer/Close" to="." method="_on_Close_pressed"]
