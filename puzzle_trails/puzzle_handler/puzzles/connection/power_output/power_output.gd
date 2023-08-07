@@ -12,7 +12,6 @@ var _connection: HBoxContainer = null
 
 onready var _label: Label = $"%Label"
 onready var _panel: Panel = $"%Panel"
-onready var _electric_line: Line2D = $"%ElectricLine"
 
 
 func _ready() -> void:
